@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>React Tutorial</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="css/base.css" />
+        <script src="scripts/react.js"></script>
+        <script src="scripts/JSXTransformer.js"></script>
+
+        <script src="scripts/jquery-2.1.4.js"></script>
+        <script src="scripts/marked.min.js"></script>
+  </head>
+  <body>
+        <div id="content"></div>
+
+        <script type="text/jsx">
+              var CommentBox = React.createClass({
+                    loadCommentsFromServer: function() {
+                      $.ajax({
+                            url: this.props.url,
+                            dataType: 'json',
+                            cache: false,
+                            success: function(data) {
+                                  this.setState({
+                                    data: data
+                                  });
+                            }.bind(this),
+                            error: function(xhr, status, err) {
+                                  console.log(this.props.url, status, err.toString());
+                            }.bind(this)
+                      });
+                    },
+                    handleCommentSubmit: function(comment) {
+                      var comments = this.state.data;
+                      comment.id = Date.now();
+                      comment.isShow = true;
+                      var newComments = comments.concat([comment]);
+                      this.setState({data: newComments});
+                      $.ajax({
+                        url: this.props.url,
+                        dataType: 'json',
+                        type: 'POST',
+                        data: comment,
+                        success: function(data) {
+                          console.log(data);
+                          this.setState({
+                            data: data,
+                            isShowCommentForm: false
+                          });
+                        }.bind(this),
+                        error: function(xhr, status, err) {
+                          console.log(this.props.url, status, err.toString());
+                        }.bind(this)
+                      });
+                    },
+                    handleCommentClose: function() {
+                      this.setState({
+                        isShowCommentForm: false
+                      });
+                    },
+                    getInitialState: function() {
+                      return {
+                        data: [],
+                        isShowCommentForm: false
+                      };
+                    },
+                    componentDidMount: function() {
+                      this.loadCommentsFromServer();
+                      setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+                    },
+                    showCommentForm: function(event) {
+                      this.setState({
+                        isShowCommentForm: true
+                      });
+                    },
+                    render: function() {
+                      return (
+                        <div className="commentBox">
+                          <h1>Recent Posts</h1>
+                          <CommentList data={this.state.data} />
+                          <CommentForm onCommentClose={this.handleCommentClose} onCommentSubmit = {this.handleCommentSubmit} isShowCommentForm={this.state.isShowCommentForm} />
+                          <button className="postComment" onClick={this.showCommentForm}>New</button>
+                        </div>
+                      );
+                    }
+              });
+              var CommentList = React.createClass({
+                render: function() {
+                  var commentNodes = this.props.data.map(function(comment) {
+                    return (
+                      <Comment title={comment.title} key={comment.id} isShow={comment.isShow}>
+                        {comment.text}
+                      </Comment>
+                    );
+                  });
+                  return (
+                    <div className="commentList">
+                      {commentNodes}
+                    </div>
+                  );
+                }
+              });
+
+              var CommentForm = React.createClass({
+                handleSubmit: function(e) {
+                  e.preventDefault();
+                  console.log(this.refs.title, this.refs.text);
+                  var title = this.refs.title.getDOMNode().value.trim();
+                  var text = this.refs.text.getDOMNode().value.trim();
+                  if (!text || !title) {
+                    return;
+                  }
+                  this.props.onCommentSubmit({
+                    title: title,
+                    text: text
+                  })
+                  this.refs.title.value = '';
+                  this.refs.text.value = '';
+                },
+                handleClose: function(event) {
+                  this.props.onCommentClose();
+                },
+                render: function() {
+                  var status = this.props.isShowCommentForm ? '' : 'none';
+                  return (
+                    <form className="commentForm" onSubmit={this.handleSubmit} style={{display: status}}>
+                      <input type="text" placeholder="Title" ref="title" />
+                      <input type="text" placeholder="Content..." ref="text" />
+                      <input type="submit" value="Post" />
+                      <input type="button" value="Close" onClick={this.handleClose}/>
+                    </form>
+                  );
+                }
+              }); var Comment = React.createClass({
+                rawMarkup: function(_data) {
+                  var rawMarkup = marked(_data,
+                    {
+                      sanitize: true
+                    }
+                  );
+                  return {
+                    __html: rawMarkup
+                  };
+                },
+                render: function() {
+                  if (!this.props.isShow && this.props.isShow !== undefined) {
+                    return null;
+                  }
+                  return (
+                    <div className="comment">
+                      <h2 className="commentTitle">
+                        {this.props.title}
+                      </h2>
+                      <span dangerouslySetInnerHTML={this.rawMarkup(this.props.children.toString())} />
+                    </div>);
+                }
+              });
+              React.render(
+                <CommentBox url="/api/comments" pollInterval={5000} />,
+                document.getElementById('content')
+              );
+        </script>
+  </body>
+</html>

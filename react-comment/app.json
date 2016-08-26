@@ -1,0 +1,13 @@
+{
+  "name": "React",
+  "description": "",
+  "keywords": [ "react", "reactjs", "tutorial" ],
+  "repository": "",
+  "logo": "",
+  "website": "",
+  "success_url": "/",
+  "env" : {
+    "BUILDPACK_URL": ""
+  }
+}
+
