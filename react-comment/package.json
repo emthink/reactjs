@@ -1,7 +1,7 @@
 {
-  "name": "react-tutorial",
-  "version": "0.0.0",
-  "description": "Code from the React tutorial.",
+  "name": "react-comment",
+  "version": "0.0.1",
+  "description": "React practice.",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.4.3",
@@ -18,16 +18,11 @@
   },
   "keywords": [
     "react",
-    "tutorial",
     "comment",
     "example"
   ],
-  "author": "petehunt",
-  "bugs": {
-    "url": "https://github.com/reactjs/react-tutorial/issues"
-  },
-  "homepage": "https://github.com/reactjs/react-tutorial",
+  "author": "惊鸿",
   "engines" : {
-    "node" : "0.12.x"
+    "node" : "6.8.x"
   }
 }
