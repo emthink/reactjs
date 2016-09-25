@@ -1,0 +1,22 @@
+/**
+ * NotingActions.js
+ * @description [Noting Action]
+ * @author [惊鸿]
+ * @link [symbol]
+ * @date 2016/09/24
+ */
+
+
+var NotingDispatcher = require('../dispatcher/NotingDispatcher');
+var _CONSTANT = require('../commons/variables');
+
+var NotingActions = {
+	create: function(content) {
+		NotingDispatcher.dispatch({
+			type: _CONSTANT.CREATE,
+			content: content
+		});
+	}
+};
+
+module.exports = NotingActions;
