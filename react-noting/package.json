@@ -1,0 +1,44 @@
+{
+  "name": "react_notes",
+  "version": "0.1.0",
+  "description": "Example React&Flux application",
+  "main": "scripts/app.js",
+  "dependencies": {
+    "flux": "^2.0.1",
+    "react": "^0.12.0"
+  },
+  "devDependencies": {
+    "browserify": "^6.2.0",
+    "envify": "^3.0.0",
+    "reactify": "^0.15.2",
+    "uglify-js": "~2.4.15",
+    "watchify": "^2.1.1",
+    "body-parser": "^1.15.2",
+    "react-router": "^2.8.2"
+  },
+  "scripts": {
+    "start": "npm run build-less && npm run build-js",
+    "build-js": "watchify -o scripts/bundle.js -v -d scripts/app.js",
+    "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > js/bundle.min.js",
+    "build-less": "lessc styles/less/app.less styles/app.css",
+    "node-server": "node server.js"
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://"
+  },
+  "keywords": [
+    "React",
+    "Flux",
+    "example",
+    "noting"
+  ],
+  "author": "惊鸿",
+  "license": "ISC"
+}
