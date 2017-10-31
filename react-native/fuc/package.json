@@ -1,0 +1,36 @@
+{
+	"name": "fuc",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"test": "jest"
+	},
+	"dependencies": {
+		"axios": "^0.16.2",
+		"immutable": "^3.8.2",
+		"prop-types": "^15.6.0",
+		"ramda": "^0.25.0",
+		"react": "16.0.0-alpha.12",
+		"react-native": "^0.48.4",
+		"react-navigation": "^1.0.0-beta.13",
+		"react-redux": "^5.0.6",
+		"reactotron-react-native": "^1.12.3",
+		"reactotron-redux": "^1.12.2",
+		"reactotron-redux-saga": "^1.12.2",
+		"redux": "^3.7.2",
+		"redux-immutable": "^4.0.0",
+		"redux-persist": "^4.10.1",
+		"redux-persist-immutable": "^4.3.1",
+		"redux-saga": "^0.15.6"
+	},
+	"devDependencies": {
+		"babel-jest": "21.2.0",
+		"babel-preset-react-native": "4.0.0",
+		"jest": "21.2.1",
+		"react-test-renderer": "16.0.0-alpha.12"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
+}
