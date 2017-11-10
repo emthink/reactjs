@@ -9,6 +9,7 @@ Reactjs & React Native resources and demos.
 6. [React DOM](https://github.com/codingplayboy/reactjs/blob/master/react_dom.md)
 7. [react-redux分析](https://github.com/codingplayboy/reactjs/blob/master/react-redux.md)
 8. [Immutable.js与React,Redux及reselect的实践](https://github.com/codingplayboy/reactjs/blob/master/immutable-redux-react.md)
+9. [React异常处理](https://github.com/codingplayboy/reactjs/blob/master/react-error-handle.md)
 
 
 
