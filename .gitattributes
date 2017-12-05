@@ -1,3 +1,5 @@
+* text=auto
+*.makefile linguist-language=JavaScript
 *.md linguist-language=JavaScript
 *.markdown linguist-language=JavaScript
 *.css linguist-language=JavaScript
