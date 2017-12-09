@@ -1,0 +1,9 @@
+# Test
+Introduce the practice of git rebase
+
+## Second Commit
+How to merge commits inot the previous one?
+
+## Third Commit
+
+Third commit.
