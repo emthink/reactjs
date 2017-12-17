@@ -23,3 +23,17 @@ External Blog: [熊建刚的博客](http://blog.codingplayboy.com)
 3. [React Native发布，热更新原理介绍](https://github.com/codingplayboy/reactjs/blob/master/rn-publish-up.md)
 
 
+## React Blog
+
+### 前言
+
+由于现在的博客是使用wordpress搭建，自己得经常修改过一些代码，但是修改第三方源码真的比较痛苦，于是决定计划开始使用React + Node.js / Python开发新博客项目，最终替换当前博客代码，方便以后博客的维护和更新，也能实现自我开发技术，架构设计，解决问题能力的提升，同时记录下整个开发历程，总结，分享，希望能与读者们一起进步。本篇介绍如何使用Webpack和Babel，Eslint，documentation.js等搭建项目开发环境和生产环境，也算项目的准备工作，下一期计划介绍项目的架构设计和技术栈选择。
+
+### 项目地址
+
+1. [React Blog](https://github.com/codingplayboy/react-blog)
+
+###开发指南
+
+1.  [Webpack自动化构建实践指南](https://github.com/codingplayboy/react-blog/blob/master/docs/initWebpack.md)
+
