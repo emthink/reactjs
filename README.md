@@ -13,6 +13,7 @@ External Blog: [熊建刚的博客](http://blog.codingplayboy.com)
 8. [Immutable.js与React,Redux及reselect的实践](https://github.com/codingplayboy/reactjs/blob/master/immutable-redux-react.md)
 9. [React异常处理](https://github.com/codingplayboy/reactjs/blob/master/react-error-handle.md)
 10. [React Fiber剖析](https://github.com/codingplayboy/reactjs/blob/master/react-fiber.md)
+11. [React应用架构设计](https://github.com/codingplayboy/reactjs/blob/master/react-app-structure.md)
 
 
 
@@ -37,5 +38,6 @@ External Blog: [熊建刚的博客](http://blog.codingplayboy.com)
 
 1.  [Webpack自动化构建实践指南](https://github.com/codingplayboy/react-blog/blob/master/docs/initWebpack.md)
 2.  [刷新页面react-router路由访问失败问题解决方案](https://github.com/codingplayboy/react-blog/blob/master/docs/webpack-dev-server-reflush-404.md)
+3.  [React应用架构设计](https://github.com/codingplayboy/react-blog/blob/master/docs/react-app-structure.md)
 
 
