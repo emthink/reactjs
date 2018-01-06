@@ -24,6 +24,10 @@ External Blog: [熊建刚的博客](http://blog.codingplayboy.com)
 3. [React Native发布，热更新原理介绍](https://github.com/codingplayboy/reactjs/blob/master/rn-publish-up.md)
 
 
+## Web Develop
+
+1. [响应式Web设计及实现思路](https://github.com/codingplayboy/reactjs/blob/master/responsive-ui.md)
+
 ## React Blog
 
 ### 前言
