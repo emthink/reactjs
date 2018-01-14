@@ -38,6 +38,12 @@ External Blog: [熊建刚的博客](http://blog.codingplayboy.com)
 
 1. [React Blog](https://github.com/codingplayboy/react-blog)
 
+## 线上地址
+
+博主将持续更新站点，欢迎访问[React blog](http://react.codingplayboy.com)。
+
+![React Blog Example](http://blog.codingplayboy.com/wp-content/uploads/2018/01/react-blog-example-1.png)
+
 ### 开发指南
 
 1.  [Webpack自动化构建实践指南](https://github.com/codingplayboy/react-blog/blob/master/docs/initWebpack.md)
