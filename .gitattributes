@@ -1,5 +1,6 @@
 * text=auto
 *.h linguist-language=JavaScript
+*.d linguist-language=JavaScript
 *.Java linguist-language=JavaScript
 *.m linguist-language=JavaScript
 *.makefile linguist-language=JavaScript
