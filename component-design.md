@@ -130,11 +130,72 @@ Tui作为一个开放的云组件库，是期望能被更多的使用者使用�
 
 ### 目录组织方式
 
+Tui云组件库基本目录组织形式如下：
 
+1. `README.md`：组件说明文档入口；
+2. `package.json`：依赖声明；
+3. `LICENSE`：授权声明；
+4. `index.js`：组件库模块导出文件，支持CommonJs方式引用；
+5. `index.es.js`：支持动态import引入方式使用的库模块导出文件；
+6. `CHANGELOG.md`：变更记录文档；
+7. `style/`：通用样式文件目录；
+   1. `index.less`：less格式样式文件；
+   2. `index.css`：css格式样式文件；
+   3. `index.js`：集中引用管理less样式文件；
+   4. `css.js`：集中引用管理css样式文件；
+8. `umd/`：umd目录，支持umd方式引入使用的版本文件；
+9. `es/`：es目录，支持动态import引入使用的组件版本；
+10. `lib/`：lib目录，支持CommonJs规范引入使用的组件版本；
+
+#### 单组件模块目录组织
+
+上面介绍的是Tui云组件库的组织目录，接下来介绍具体组件的目录组织形式：
+
+1. `README.md`：组件说明文档入口；
+
+2. `package.json`：依赖声明；
+
+3. `LICENSE`：授权声明；
+
+4. `CHANGELOG.md`：变更记录文档；
+
+5. `index.js`：组件模块导出文件；
+
+6. `style/`：样式组织目录；
+
+   1. `index.less`：less格式样式文件；
+
+   2. `index.css`：css格式样式文件；
+
+   3. `index.js`：集中引用管理less样式文件；
+
+      如：
+
+      ```javascript
+      import '../../style/index.less';
+      import './index.less';
+      ```
+
+   4. `css.js`：集中引用管理css样式文件；
+
+      如：
+
+      ```javascript
+      import '../../style/index.css';
+      import './index.css';
+      ```
+
+7. `xxx.js`：组件模块划分的其他小模块，如`Menu组件，可能会有`MenuList.js`和`Menuitem.js`文件；
+
+#### Menu组件实例
+
+以Menu组件为例，其组织如：
+
+![](http://blog.codingplayboy.com/wp-content/uploads/2018/02/tui-dir-example.png)
 
 ### 模块化
 
-组件封装后应同时支持CommonJs规范和UMD方式加载使用。
+组件封装后应同时支持CommonJs规范和UMD方式加载使用，另外尽量支持动态import引入方式使用。
 
 ## 组件接口设计规范
 
